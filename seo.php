@@ -1,21 +1,31 @@
-<?php
-
-$conn = mysqli_connect("localhost", "root", "", "portfolio_db");
-
-if (!$conn) {
-    die("Connection Failed: " . mysqli_connect_error());
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="google-site-verification" content="SPoRKnz60twdPT77UqFH6OkRz_zgHThVQR7TvX6aAqk" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
 
+    <meta name="description" content="Personal portfolio of Danish Khan, Junior Analyst and Cybersecurity learner.">
+
+    <meta name="keywords" content="Danish Khan, Portfolio, Cybersecurity, SOC Analyst, HTML, SEO">
+
+    <meta name="author" content="Danish Khan">
+
+    <p>Location: Ahmedabad, India</p>
+    <p>Contact: +91 XXXXXXXX</p>
+
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Social SEO) -->
+    <meta property="og:title" content="Danish Khan Portfolio">
+    <meta property="og:description" content="Cybersecurity learner and Junior Analyst portfolio">
+    <meta property="og:type" content="website">
+
+    <!-- hreflang (multilingual SEO) -->
+    <link rel="alternate" hreflang="en" href="http://example.com/en">
+    <link rel="alternate" hreflang="hi" href="http://example.com/hi">
+    <title>Personal Portfolio</title>
     <style>
         /* Body */
         body {
@@ -127,35 +137,26 @@ if (!$conn) {
             padding: 15px;
         }
     </style>
-
 </head>
 
 <body>
-
     <header>
-        <h1><?php echo "Danish Khan"; ?></h1>
+        <h1>
+            <?php echo "My Portfolio"; ?>
+        </h1>
         <p>Junior Analyst | Cybersecurity Learner</p>
     </header>
-
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
+    <nav> <a href="#about">About</a> <a href="#skills">Skills</a> <a href="#projects">Projects</a> <a
+            href="#contact">Contact</a> </nav>
     <section id="about">
         <div class="container">
             <div class="card">
                 <h2>About Me</h2>
-                <p>
-                    Hello! My name is Danish Khan. I am learning Cybersecurity and working as a Junior Analyst.
-                    I am interested in SOC Analyst and Cybersecurity Engineering.
-                </p>
+                <p> Hello! My name is Danish Khan. I am learning Cybersecurity and working as a Junior Analyst. I am
+                    interested in SOC Analyst and Cybersecurity Engineering. </p>
             </div>
         </div>
     </section>
-
     <section id="skills">
         <div class="container">
             <div class="card">
@@ -170,7 +171,6 @@ if (!$conn) {
             </div>
         </div>
     </section>
-
     <section id="projects">
         <div class="container">
             <div class="card">
@@ -185,51 +185,113 @@ if (!$conn) {
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container">
-            <div class="card">
-                <h2>Contact Me</h2>
+</body>
 
-                <form method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" name="submit" class="btn">Send Message</button>
-                </form>
+</html>
 
-            </div>
+<div class="container">
+    <div class="card">
+
+        <h2>Contact Form</h2>
+
+        <form method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea><br><br>
+            <button type="submit" name="submit">Send Message</button>
+        </form>
+
+    </div>
+</div>
+
+<section id="faq">
+    <div class="container">
+        <div class="card">
+            <h2>FAQ (Frequently Asked Questions)</h2>
+
+            <h3>What does Danish Khan do?</h3>
+            <p>Danish Khan is a Junior Analyst and learning Cybersecurity and SOC Analysis.</p>
+
+            <h3>What skills does Danish Khan have?</h3>
+            <p>He has skills in C programming, HTML, CSS, JavaScript, Networking, and Cybersecurity fundamentals.</p>
+
+            <h3>How can I contact Danish Khan?</h3>
+            <p>You can contact through the contact form available on this website.</p>
+
+            <h3>What is Danish Khan learning currently?</h3>
+            <p>He is learning advanced cybersecurity and working towards becoming a SOC Analyst.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2026 Personal Portfolio | Designed by Danish Khan</p>
-    </footer>
+<footer>
+    <p>© 2026 Personal Portfolio | Designed by Danish Khan</p>
+</footer>
 
-
-    <?php
-
-    $conn = mysqli_connect("localhost", "root", "", "portfolio_db");
-
-    $msg = "";
-
-    if (isset($_POST['submit'])) {
-
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $message = $_POST['message'];
-
-        $sql = "INSERT INTO contacts (name, email, message) 
-            VALUES ('$name', '$email', '$message')";
-
-        if (mysqli_query($conn, $sql)) {
-            $msg = "Data Saved Successfully!";
-        } else {
-            $msg = "Error: " . mysqli_error($conn);
-        }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does Danish Khan do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Danish Khan is a Junior Analyst and Cybersecurity learner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I contact Danish Khan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can contact him using the contact form on his website."
+      }
     }
+  ]
+}
+</script>
 
-    ?>
+<?php
 
+// 🔥 ERROR SHOW (IMPORTANT)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// 🔥 DATABASE CONNECT
+$conn = mysqli_connect("localhost", "root", "", "portfolio_db");
+
+if (!$conn) {
+    die("Connection Failed: " . mysqli_connect_error());
+}
+
+$msg = "";
+
+// 🔥 FORM SUBMIT CHECK
+if (isset($_POST['submit'])) {
+
+    // DEBUG
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    // 🔥 SQL QUERY
+    $sql = "INSERT INTO contactus (id, name, email, message) 
+            VALUES (NULL, '$name', '$email', '$message')";
+
+    // 🔥 QUERY RUN
+    if (mysqli_query($conn, $sql)) {
+        $msg = "✅ Data Saved Successfully!";
+    } else {
+        $msg = "❌ Error: " . mysqli_error($conn);
+    }
+}
+?>
 
 </body>
 
